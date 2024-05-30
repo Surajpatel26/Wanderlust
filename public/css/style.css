@@ -16,7 +16,7 @@
 }
 
 .fa-compass {
-     color: #fe424d;
+     color: #427efe;
      font-size: 2rem;
 }
  
@@ -94,12 +94,12 @@
   
 /* New page */
 .add-btn {
-    background-color: #fe424d !important;
+    background-color: #427efe !important;
     border: none !important;
 } 
 /* Edit page */
 .edit-btn {
-    background-color: #fe424d !important;
+    background-color: #427efe !important;
     border: none !important;
 }
 /* Show page */

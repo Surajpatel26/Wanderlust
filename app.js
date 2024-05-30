@@ -11,13 +11,13 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
-const{listingSchema,reviewSchema} = require("./schema.js");
+const{listingSchema,reviewSchema} = require("./schema.js"); 
 const Review = require("./models/review.js");
 const listingRouter = require("./routes/listing.js");
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const reviewRouter = require("./routes/review.js");
 const session = require("express-session");
-const MongoStore = require('connect-mongo');
+const MongoStore = require('connect-mongo'); 
 
 const flash = require("connect-flash");
 const passport = require("passport");
@@ -42,14 +42,14 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
+app.use(methodOverride("method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   crypto:{
-    secret: "mysupersecretcode"
+    secret: process.env.SECRET,
   },
   touchAfter: 24 * 3600,
 });
@@ -60,7 +60,7 @@ store.on("error", () => {
 
 const sessionOptions ={
   store,
-  secret: "mysupersecretcode",
+  secret:  process.env.SECRET,
   resave: false,
   saveUninitialized:true,
   cookie :{
@@ -115,6 +115,6 @@ app.use((err, req, res, next) =>{
   
 });
 
-app.listen(8080, () => {
+app.listen(8081, () => {
   console.log("server is listening to port 8080");
 });
