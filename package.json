@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.15.3",
-    "cloudinary": "^2.0.1",
+    "all": "^0.0.0",
+    "cloudinary": "^1.21.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
     "dotenv": "^16.4.2",
@@ -22,6 +23,7 @@
     "ejs-mate": "^4.0.0",
     "express": "^4.18.2",
     "express-session": "^1.18.0",
+    "from": "^0.1.7",
     "init": "^0.1.2",
     "joi": "^17.12.1",
     "listing.js": "^3.3.0",
@@ -32,6 +34,9 @@
     "next": "^14.1.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^8.0.0"
+    "passport-local-mongoose": "^8.0.0",
+    "project": "^0.1.6",
+    "root": "^3.2.0",
+    "the": "^1.0.2"
   }
 }
